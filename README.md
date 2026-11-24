@@ -1,4 +1,4 @@
-﻿# formatos-layout
+# formatos-layout
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,7 +6,7 @@
 </div>
 
 
-[![Formatos de vÃ­deo](guia/assets/banner.jpg)](https://inematds.github.io/formatos-layout/guia/)
+[![Formatos de vÃ­deo](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
@@ -16,7 +16,7 @@ O formatos-layout Ã© um catÃ¡logo de formatos de vÃ­deo para quem grava co
 
 ## ðŸ“– Guia de uso
 
-Guia completo, com os 20 exemplos em vÃ­deo: **https://inematds.github.io/formatos-layout/guia/**
+Guia completo, com os 20 exemplos em vÃ­deo: **https://linnoff88-dev.github.io/
 
 ## Os formatos
 
@@ -37,7 +37,7 @@ Guia completo, com os 20 exemplos em vÃ­deo: **https://inematds.github.io/form
 
 Detalhes, quando usar cada um e exemplos: [FORMATOS.md](FORMATOS.md).
 
-O [FORMATOS.md](FORMATOS.md) tambÃ©m traz onde o avatar aparece em cada formato e **quais formatos cada projeto de vÃ­deo do INEMA usa** (explicavideos, eventosextremospub, r7e, finviral, promoavatar, docflow e outros).
+O [FORMATOS.md](FORMATOS.md) tambÃ©m traz onde o avatar aparece em cada formato e **quais formatos cada projeto de vÃ­deo do ARCKHÉ usa** (explicavideos, eventosextremospub, r7e, finviral, promoavatar, docflow e outros).
 
 ## Uso
 

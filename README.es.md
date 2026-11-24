@@ -1,6 +1,6 @@
 # formatos-layout
 
-[![Formatos de video](guia/assets/banner-es.jpg)](https://inematds.github.io/formatos-layout/guia/es/)
+[![Formatos de video](guia/assets/banner-es.jpg)](https://linnoff88-dev.github.io/
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,7 +10,7 @@ formatos-layout es un catálogo de formatos de video para quien graba con un pre
 
 ## 📖 Guía de uso
 
-Guía completa, con los 20 ejemplos en video: **https://inematds.github.io/formatos-layout/guia/es/**
+Guía completa, con los 20 ejemplos en video: **https://linnoff88-dev.github.io/
 
 ## Los formatos
 
@@ -31,7 +31,7 @@ Guía completa, con los 20 ejemplos en video: **https://inematds.github.io/forma
 
 Detalles, cuándo usar cada uno y ejemplos: [FORMATOS.md](FORMATOS.md) (en portugués).
 
-También muestra dónde aparece el avatar en cada formato y **qué formatos usa cada proyecto de video de INEMA** (explicavideos, eventosextremospub, r7e, finviral, promoavatar, docflow y otros); las mismas tablas están en la guía, en español.
+También muestra dónde aparece el avatar en cada formato y **qué formatos usa cada proyecto de video de ARCKHÉ** (explicavideos, eventosextremospub, r7e, finviral, promoavatar, docflow y otros); las mismas tablas están en la guía, en español.
 
 ## Uso
 

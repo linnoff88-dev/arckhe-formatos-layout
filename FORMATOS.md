@@ -13,7 +13,7 @@ Todos saem do mesmo par de entradas:
 ```
 
 Opções: `--ss` / `--t` (trecho), `--trechos "0-4,30-34"` (Telejornal), `--fim 6` (Documentário),
-`--gancho 3` (Pergunta), `--nome "NEI MALDANER | INEMA"` (plaquinha), `MUSICA=trilha.mp3` (trilha baixa com ducking),
+`--gancho 3` (Pergunta), `--nome "NEI MALDANER | ARCKHÉ"` (plaquinha), `MUSICA=trilha.mp3` (trilha baixa com ducking),
 `AV_CX` / `AV_CY` (centro do rosto no avatar; padrão 1140/510).
 A voz sai sempre em −14 LUFS.
 
@@ -57,7 +57,7 @@ Uma imagem real de cada formato. Nos que alternam (Telejornal, Documentário, Vi
 | **Documentário** | Só o conteúdo com a voz por cima; o apresentador aparece apenas nos últimos segundos (CTA) | Narrativa de documentário; o rosto só no fechamento | `demos/16x9/documentario.mp4` · docflow |
 | **Aula** | Conteúdo em tela cheia; rosto pequeno (406×228) num quadro âmbar no canto de CIMA à direita | Aula e explicativo calmo; o rosto não disputa com o conteúdo | `demos/16x9/aula.mp4` · explicavideos (aula) |
 
-> **Viral não existe em 16:9.** É regra do kit de design INEMA (`inema-design/video/style.md`):
+> **Viral não existe em 16:9.** É regra do kit de design ARCKHÉ (`ARCKHÉ-design/video/style.md`):
 > o preset viral é só para 9:16.
 
 ## 9:16 (vertical)
@@ -79,7 +79,7 @@ Uma imagem real de cada formato. Nos que alternam (Telejornal, Documentário, Vi
 
 ## Quais formatos cada projeto usa
 
-Levantamento no código dos projetos de vídeo do INEMA em 15/10/2026. As variantes que eram de um projeto só ganharam nome no catálogo: Aula, Metade, Invertido, Pergunta, Empilhado e Personagem.
+Levantamento no código dos projetos de vídeo do ARCKHÉ em 15/10/2026. As variantes que eram de um projeto só ganharam nome no catálogo: Aula, Metade, Invertido, Pergunta, Empilhado e Personagem.
 
 | Projeto | Aspecto | Formatos | Como usa |
 |---|---|---|---|
@@ -92,12 +92,12 @@ Levantamento no código dos projetos de vídeo do INEMA em 15/10/2026. As varian
 | **reelcomenta** | 9:16 | Canto | O reel original em tela cheia e o avatar no quadro âmbar embaixo à direita. |
 | **docflow** | 16:9 | Telejornal · Documentário | Estilo <code>historia-apresentador</code>: o avatar toma a tela e alterna com os visuais (Telejornal). Os outros estilos são só voz sobre imagens, sem rosto. |
 | **makeshorts** | 9:16 | Faixa | Tema em cima e rosto ou avatar embaixo, meio a meio. O avatar é opcional (<code>MS_AVATAR=heygen</code>). |
-| **reel-edita-inematds** | 9:16 | Viral | Rosto gravado de verdade (não avatar): tela cheia, PiP no canto esquerdo ou tela dividida, conforme o momento. |
+| **reel-edita-linnoff88-dev** | 9:16 | Viral | Rosto gravado de verdade (não avatar): tela cheia, PiP no canto esquerdo ou tela dividida, conforme o momento. |
 | **ugc-agente** | 9:16 | Personagem | Personagem de IA (Kling + lipsync) ocupa o vídeo inteiro; não é o Nei e não há conteúdo à parte. |
-| **cardshorts · videos-explicativos · video-explicativo · aventurasinemavideo · timesmkt3** | 9:16 · 16:9 · 1:1 | Documentário (sem rosto) | Sem avatar: só a voz (Nei clonado ou TTS) sobre cards, cenas animadas, fotos ou anúncios. |
+| **cardshorts · videos-explicativos · video-explicativo · aventurasARCKHÉvideo · timesmkt3** | 9:16 · 16:9 · 1:1 | Documentário (sem rosto) | Sem avatar: só a voz (Nei clonado ou TTS) sobre cards, cenas animadas, fotos ou anúncios. |
 
 ## De onde veio
 
 Os formatos Largo, Canto (9:16) e Faixa já rodavam no motor do
-[eventosextremospub](https://github.com/inematds/eventosextremospub) (`motor/compor_avatar.sh`). Aula, Metade, Invertido, Pergunta e Empilhado reproduzem layouts do explicavideos, r7e, finviral e promoavatar; Personagem vem do ugc-agente. Os outros foram
-criados aqui. As demonstrações usam, cada uma, um evento diferente dos [shorts do Eventos Extremos](https://www.youtube.com/@eventosextremos-inema/shorts) (cena + avatar do Nei pelo estúdio HeyGen). A lista de qual edição e trecho vai em cada formato está em `lib/demos.sh`, que refaz os 20 demos, os pôsteres e as imagens da tabela.
+[eventosextremospub](https://github.com/linnoff88-dev/eventosextremospub) (`motor/compor_avatar.sh`). Aula, Metade, Invertido, Pergunta e Empilhado reproduzem layouts do explicavideos, r7e, finviral e promoavatar; Personagem vem do ugc-agente. Os outros foram
+criados aqui. As demonstrações usam, cada uma, um evento diferente dos [shorts do Eventos Extremos](https://www.youtube.com/@eventosextremos-ARCKHÉ/shorts) (cena + avatar do Nei pelo estúdio HeyGen). A lista de qual edição e trecho vai em cada formato está em `lib/demos.sh`, que refaz os 20 demos, os pôsteres e as imagens da tabela.
