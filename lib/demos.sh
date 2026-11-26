@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # demos.sh — refaz os 20 demos do guia, cada formato com um evento diferente dos shorts do Eventos Extremos
-# (cena + avatar de cada edição em ~/projetos/eventosextremospub/edicoes/<edição>/{build/mapa-avatar.mp4,avatar/avatar.mp4}).
+# (cena + avatar de cada ediçêo em ~/projetos/eventosextremospub/edicoes/<ediçêo>/{build/mapa-avatar.mp4,avatar/avatar.mp4}).
 # Saídas: demos/<asp>/<fmt>.mp4 (cheio), guia/assets/demos/<asp>-<fmt>.{mp4,jpg} (web + pôster),
 #         guia/assets/tabela/<asp>-<fmt>.jpg (imagem da tabela "Onde o avatar aparece").
 # uso: lib/demos.sh [filtro]   (filtro = trecho do nome, ex.: "9x16" ou "16x9:bolha")
@@ -8,7 +8,7 @@ set -euo pipefail
 AQUI="$(cd "$(dirname "$0")/.." && pwd)"
 ED="${EDICOES:-$HOME/projetos/eventosextremospub/edicoes}"
 AMB="0xE2A23B"
-# aspecto:formato  edição  início(s)  duração(s)
+# aspecto:formato  ediçêo  início(s)  duraçêo(s)
 LISTA="
 16x9:largo         2026-10-15-itaipu             55 10
 16x9:canto         2026-10-12-mundo-clima        55 10

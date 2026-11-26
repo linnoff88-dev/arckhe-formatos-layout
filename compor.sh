@@ -5,7 +5,7 @@
 #   16x9: largo canto bolha telejornal dividido apresentador documentario aula
 #   9x16: faixa canto bolha telejornal apresentador viral documentario metade invertido pergunta empilhado personagem
 # CENA = vídeo do conteúdo já no aspecto (1920x1080 ou 1080x1920). AVATAR = vídeo 16:9 do apresentador (HeyGen 1920x1080),
-# rosto perto do centro: AV_CX/AV_CY (padrão 1140/510) dizem onde fica o centro do rosto. Voz sai a -14 LUFS;
+# rosto perto do centro: AV_CX/AV_CY (padrêo 1140/510) dizem onde fica o centro do rosto. Voz sai a -14 LUFS;
 # MUSICA=arquivo.mp3 acrescenta trilha baixa com ducking. Ver FORMATOS.md.
 set -euo pipefail
 AQUI="$(cd "$(dirname "$0")" && pwd)"
@@ -14,25 +14,25 @@ while [ $# -gt 0 ]; do case "$1" in
   --formato) FORMATO="$2"; shift 2;; --aspecto) ASP="$2"; shift 2;; --cena) CENA="$2"; shift 2;;
   --avatar) AVATAR="$2"; shift 2;; --saida) SAIDA="$2"; shift 2;; --ss) SS="$2"; shift 2;; --t) T="$2"; shift 2;;
   --trechos) TRECHOS="$2"; shift 2;; --fim) FIM="$2"; shift 2;; --gancho) GANCHO="$2"; shift 2;; --nome) NOME="$2"; shift 2;;
-  -h|--help) sed -n 2,9p "$0"; exit 0;; *) echo "opção desconhecida: $1" >&2; exit 2;; esac; done
+  -h|--help) sed -n 2,9p "$0"; exit 0;; *) echo "opçêo desconhecida: $1" >&2; exit 2;; esac; done
 [ -n "$FORMATO" ] && [ -n "$ASP" ] && [ -s "$CENA" ] && [ -s "$AVATAR" ] && [ -n "$SAIDA" ] || { sed -n 2,9p "$0"; exit 2; }
 case "$ASP:$FORMATO" in
   16x9:largo|16x9:canto|16x9:bolha|16x9:telejornal|16x9:dividido|16x9:apresentador|16x9:documentario|16x9:aula) W=1920; H=1080;;
   9x16:faixa|9x16:canto|9x16:bolha|9x16:telejornal|9x16:apresentador|9x16:viral|9x16:documentario|9x16:metade|9x16:invertido|9x16:pergunta|9x16:empilhado|9x16:personagem) W=1080; H=1920;;
-  *) echo "formato '$FORMATO' não existe em $ASP (ver FORMATOS.md)" >&2; exit 2;; esac
+  *) echo "formato '$FORMATO' nêo existe em $ASP (ver FORMATOS.md)" >&2; exit 2;; esac
 
 CX=${AV_CX:-1140}; CY=${AV_CY:-510}
 AMB="0xE2A23B@1"; FUNDO="0x0c0c10"
 FONTE="$HOME/.local/share/fonts/Montserrat-ExtraBold.ttf"; [ -s "$FONTE" ] || FONTE=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
 mkdir -p "$AQUI/.cache"; TAGF="$AQUI/.cache/tag.txt"; printf '%s' "$NOME" > "$TAGF"
-# duração: o que sobra do avatar depois de --ss (ou --t)
+# duraçêo: o que sobra do avatar depois de --ss (ou --t)
 DA=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$AVATAR")
 D=$(python3 -c "d=$DA-$SS; t='$T'; print(round(min(d, float(t)) if t else d, 3))")
 pos(){ python3 -c "print(max(0,int($1)))"; }
 # plaquinha com o nome: tag X Y LARGURA [enable]
 tag(){ local en=""; [ -n "${4:-}" ] && en=":enable='$4'"
   echo "drawbox=x=$1:y=$2:w=$3:h=44:color=0x0b0f14@0.85:t=fill$en,drawbox=x=$1:y=$2:w=6:h=44:color=0xff2a1f@1:t=fill$en,drawtext=fontfile=$FONTE:textfile=$TAGF:x=$(($1+18)):y=$(($2+12)):fontsize=21:fontcolor=white$en"; }
-# trechos "a-b,c-d" → expressão enable do ffmpeg
+# trechos "a-b,c-d" → expressêo enable do ffmpeg
 expr_trechos(){ python3 - "$1" "$D" <<'PY'
 import sys
 D=float(sys.argv[2]); out=[]
@@ -68,12 +68,12 @@ case "$ASP:$FORMATO" in
     V="$V[c][av]overlay=0:0:enable='$EN',$TG[v]";;
   16x9:dividido)  # metade conteúdo, metade apresentador
     V="[c]crop=1280:1080:0:0,scale=960:810[cs];[bg][cs]overlay=0:135[b];[a0]crop=960:1080:$(pos "$CX-480"):0[av];[b][av]overlay=960:0,drawbox=x=958:y=0:w=4:h=1080:color=$AMB:t=fill,$(tag 990 1000 330)[v]";;
-  16x9:apresentador)  # apresentador domina a tela, conteúdo num cartão à esquerda
+  16x9:apresentador)  # apresentador domina a tela, conteúdo num cartêo à esquerda
     SH=$(pos "1520-$CX")
     V="[a0]crop=$((1920-SH)):1080:0:0[av];[bg][av]overlay=$SH:0[b];[c]scale=1040:585[cs];[b]drawbox=x=52:y=243:w=1048:h=593:color=$AMB:t=fill[b2];[b2][cs]overlay=56:247,$(tag 1360 1000 330)[v]";;
   9x16:apresentador)
     V="[a0]crop=960:1080:$(pos "$CX-480"):0,scale=1080:1215[av];[bg][av]overlay=0:705[b];[c]crop=1080:1080:0:200,scale=620:620[cs];[b]drawbox=x=226:y=146:w=628:h=628:color=$AMB:t=fill[b2];[b2][cs]overlay=230:150,$(tag 40 1700 390)[v]";;
-  9x16:faixa)   # padrão explicavideos: apresentador numa faixa embaixo
+  9x16:faixa)   # padrêo explicavideos: apresentador numa faixa embaixo
     V="[a0]scale=1080:608[av];[c][av]overlay=0:1110,$(tag 28 1652 390)[v]";;
   9x16:viral)   # cortes secos a cada 2 s: conteúdo → apresentador → conteúdo → close; fecha no apresentador
     DE=$(python3 -c "print(max(0,$D-5))")
