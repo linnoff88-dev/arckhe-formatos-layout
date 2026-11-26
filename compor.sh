@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # formatos-layout — monta CENA + AVATAR num dos formatos nomeados (16x9 ou 9x16). Só ffmpeg, sem GPU.
 # uso: ./compor.sh --formato <nome> --aspecto 16x9|9x16 --cena cena.mp4 --avatar avatar.mp4 --saida saida.mp4 \
-#        [--ss 0] [--t 10] [--trechos "0-4,30-34"] [--fim 6] [--gancho 3] [--nome "NEI MALDANER | INEMA"]
+#        [--ss 0] [--t 10] [--trechos "0-4,30-34"] [--fim 6] [--gancho 3] [--nome "NEI MALDANER | ARCKHÉ"]
 #   16x9: largo canto bolha telejornal dividido apresentador documentario aula
 #   9x16: faixa canto bolha telejornal apresentador viral documentario metade invertido pergunta empilhado personagem
 # CENA = vídeo do conteúdo já no aspecto (1920x1080 ou 1080x1920). AVATAR = vídeo 16:9 do apresentador (HeyGen 1920x1080),
@@ -9,7 +9,7 @@
 # MUSICA=arquivo.mp3 acrescenta trilha baixa com ducking. Ver FORMATOS.md.
 set -euo pipefail
 AQUI="$(cd "$(dirname "$0")" && pwd)"
-FORMATO=""; ASP=""; CENA=""; AVATAR=""; SAIDA=""; SS=0; T=""; TRECHOS=""; FIM=6; GANCHO=3; NOME="NEI MALDANER  |  INEMA"
+FORMATO=""; ASP=""; CENA=""; AVATAR=""; SAIDA=""; SS=0; T=""; TRECHOS=""; FIM=6; GANCHO=3; NOME="NEI MALDANER  |  ARCKHÉ"
 while [ $# -gt 0 ]; do case "$1" in
   --formato) FORMATO="$2"; shift 2;; --aspecto) ASP="$2"; shift 2;; --cena) CENA="$2"; shift 2;;
   --avatar) AVATAR="$2"; shift 2;; --saida) SAIDA="$2"; shift 2;; --ss) SS="$2"; shift 2;; --t) T="$2"; shift 2;;
